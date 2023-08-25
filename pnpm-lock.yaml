@@ -47,6 +47,9 @@ dependencies:
   expo-system-ui:
     specifier: ~2.4.0
     version: 2.4.0(expo@49.0.8)
+  lucide-react-native:
+    specifier: ^0.268.0
+    version: 0.268.0(prop-types@15.8.1)(react-native-svg@13.9.0)(react-native@0.72.4)(react@18.2.0)
   react:
     specifier: 18.2.0
     version: 18.2.0
@@ -6776,6 +6779,20 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
+    dev: false
+
+  /lucide-react-native@0.268.0(prop-types@15.8.1)(react-native-svg@13.9.0)(react-native@0.72.4)(react@18.2.0):
+    resolution: {integrity: sha512-tv+GZ8Zhfsk5IpADhGJXDnbiEBZVlfHFcjs133GCNJz0ffWKq8v3qGm6wnNpJjsrmGYvHAbduWQ3Z3pUxuZ0cQ==}
+    peerDependencies:
+      prop-types: ^15.7.2
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+      react-native: '*'
+      react-native-svg: ^12.0.0 || ^13.0.0
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-native: 0.72.4(@babel/core@7.22.10)(@babel/preset-env@7.22.10)(react@18.2.0)
+      react-native-svg: 13.9.0(react-native@0.72.4)(react@18.2.0)
     dev: false
 
   /make-dir@2.1.0:
