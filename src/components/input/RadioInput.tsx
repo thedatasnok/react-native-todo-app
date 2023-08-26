@@ -73,8 +73,13 @@ const RadioInput = <T extends string>({ options }: RadioInputProps<T>) => {
             )}
           </Box>
 
-          <RadioIndicator h="$4" w="$4">
-            <Icon as={CircleIcon} h="$2.5" w="$2.5" color={option.value === value ? "$primary500" : "$gray400"} />
+          <RadioIndicator h="$4" w="$4" borderWidth="$1">
+            <Icon
+              as={CircleIcon}
+              h="$2.5"
+              w="$2.5"
+              color={option.value === value ? "$primary500" : "$gray400"}
+            />
           </RadioIndicator>
         </Radio>
       ))}
