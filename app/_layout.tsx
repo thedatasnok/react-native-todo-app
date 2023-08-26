@@ -1,7 +1,7 @@
-import { GluestackUIProvider, config } from "@gluestack-ui/themed";
-import { Slot } from "expo-router";
-import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
+import { GluestackUIProvider, config } from '@gluestack-ui/themed';
+import { Slot } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 
 export type Todo = {
   name: string;

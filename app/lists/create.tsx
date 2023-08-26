@@ -1,5 +1,5 @@
-import Header from "@/components/layout/Header";
-import BackButton from "@/components/navigation/BackButton";
+import Header from '@/components/layout/Header';
+import BackButton from '@/components/navigation/BackButton';
 import {
   Box,
   Button,
@@ -16,9 +16,9 @@ import {
   Textarea,
   TextareaInput,
   config,
-} from "@gluestack-ui/themed";
-import { useRouter } from "expo-router";
-import { useState } from "react";
+} from '@gluestack-ui/themed';
+import { useRouter } from 'expo-router';
+import { useState } from 'react';
 
 const listAccentColors = [
   config.theme.tokens.colors.purple500,
@@ -32,18 +32,18 @@ type SelectableColor = (typeof listAccentColors)[number];
 
 const CreateListScreen = () => {
   const router = useRouter();
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
   const [selectedColor, setSelectedColor] = useState<SelectableColor>();
 
   return (
-    <Box h="$full" w="$full">
-      <Header title="New tudu list">
+    <Box h='$full' w='$full'>
+      <Header title='New tudu list'>
         <BackButton onPress={router.back} />
         {undefined}
       </Header>
 
-      <Box p="$2">
+      <Box p='$2'>
         <FormControl>
           <FormControlLabel>
             <FormControlLabelText>Name</FormControlLabelText>
@@ -52,7 +52,7 @@ const CreateListScreen = () => {
             <InputField
               defaultValue={name}
               onChangeText={setName}
-              placeholder="School"
+              placeholder='School'
             />
           </Input>
         </FormControl>
@@ -65,7 +65,7 @@ const CreateListScreen = () => {
             <TextareaInput
               defaultValue={description}
               onChangeText={setDescription}
-              placeholder="Something"
+              placeholder='Something'
             />
           </Textarea>
         </FormControl>
@@ -75,38 +75,38 @@ const CreateListScreen = () => {
             <FormControlLabelText>Color</FormControlLabelText>
           </FormControlLabel>
 
-          <Box display="flex" flexDirection="row" flexWrap="wrap" gap="$2">
+          <Box display='flex' flexDirection='row' flexWrap='wrap' gap='$2'>
             {listAccentColors.map((color) => (
               <Button
                 key={color}
                 bgColor={color}
-                rounded="$md"
-                borderColor="$gray300"
-                borderWidth="$1"
+                rounded='$md'
+                borderColor='$gray300'
+                borderWidth='$1'
                 aspectRatio={1}
-                h="$12"
+                h='$12'
                 onPress={() => setSelectedColor(color)}
               >
-                {color === selectedColor && <Icon as={CheckIcon} size="xl" />}
+                {color === selectedColor && <Icon as={CheckIcon} size='xl' />}
               </Button>
             ))}
 
             <Button
-              bgColor="$gray50"
-              rounded="$md"
-              borderColor="$gray300"
-              borderWidth="$1"
+              bgColor='$gray50'
+              rounded='$md'
+              borderColor='$gray300'
+              borderWidth='$1'
               aspectRatio={1}
-              h="$12"
+              h='$12'
               onPress={() => setSelectedColor(undefined)}
             >
-              <Icon as={EyeOffIcon} color="$black" size="xl" />
+              <Icon as={EyeOffIcon} color='$black' size='xl' />
             </Button>
           </Box>
         </FormControl>
 
-        <Button mt="$2">
-          <Text color="$white" fontWeight="$semibold">
+        <Button mt='$2'>
+          <Text color='$white' fontWeight='$semibold'>
             Create list
           </Text>
         </Button>

@@ -1,4 +1,4 @@
-import { Button, ChevronLeftIcon, Icon, Text } from "@gluestack-ui/themed";
+import { Button, ChevronLeftIcon, Icon, Text } from '@gluestack-ui/themed';
 
 export interface BackButtonProps {
   onPress?: () => void;
@@ -6,9 +6,9 @@ export interface BackButtonProps {
 
 const BackButton: React.FC<BackButtonProps> = ({ onPress }) => {
   return (
-    <Button variant="link" onPress={onPress}>
-      <Icon as={ChevronLeftIcon} size="lg" color="$primary500" />
-      <Text fontSize="$md" color="$primary500" fontWeight="$medium">
+    <Button variant='link' onPress={onPress}>
+      <Icon as={ChevronLeftIcon} size='lg' color='$primary500' />
+      <Text fontSize='$md' color='$primary500' fontWeight='$medium'>
         Back
       </Text>
     </Button>
