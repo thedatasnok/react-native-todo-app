@@ -5,11 +5,11 @@ import {
   Icon,
   Radio,
   RadioGroup,
+  RadioIcon,
   RadioIndicator,
   RadioLabel,
   Text,
 } from "@gluestack-ui/themed";
-import { RadioIcon } from "lucide-react-native";
 import { useState } from "react";
 
 export interface RadioInputOption<T extends string> {
@@ -74,7 +74,7 @@ const RadioInput = <T extends string>({ options }: RadioInputProps<T>) => {
           </Box>
 
           <RadioIndicator h="$4" w="$4" borderWidth="$1">
-            <Icon
+            <RadioIcon
               as={CircleIcon}
               h="$2.5"
               w="$2.5"
