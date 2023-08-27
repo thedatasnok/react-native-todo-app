@@ -1,4 +1,4 @@
-import { Box, Divider, Text } from '@gluestack-ui/themed';
+import { Box, Divider, Heading, Text } from '@gluestack-ui/themed';
 
 export interface HeaderProps {
   title: string;
@@ -17,7 +17,14 @@ const Header: React.FC<HeaderProps> = ({ title, children }) => {
         flexDirection='row'
         alignItems='center'
         justifyContent='space-between'
-        bgColor='$gray100'
+        sx={{
+          _dark: {
+            bgColor: '$gray900',
+          },
+          _light: {
+            bgColor: '$gray100',
+          },
+        }}
         h='$10'
         px='$2'
       >
@@ -32,16 +39,7 @@ const Header: React.FC<HeaderProps> = ({ title, children }) => {
           alignItems='center'
           justifyContent='center'
         >
-          <Text
-            size='xl'
-            color='$black'
-            fontWeight='$bold'
-            flexBasis='$0'
-            flex={1}
-            mt='$1'
-          >
-            {title}
-          </Text>
+          <Heading size='lg'>{title}</Heading>
         </Box>
 
         <Box flexBasis='$0' flex={1} display='flex' alignItems='flex-end'>

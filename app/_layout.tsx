@@ -1,26 +1,24 @@
-import { GluestackUIProvider, config } from '@gluestack-ui/themed';
+import { useTheme } from '@/theme';
+import { Box, GluestackUIProvider, config } from '@gluestack-ui/themed';
 import { Slot } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-
-export type Todo = {
-  name: string;
-  notes: string;
-  createdAt: Date;
-  completedAt: Date | null;
-};
-
-export type TodoList = {
-  name: string;
-  todos: Todo[];
-};
 
 export default function App() {
-  const [_todoLists, _setTodoLists] = useState<TodoList[]>([]);
+  const theme = useTheme();
 
   return (
-    <GluestackUIProvider config={config.theme}>
-      <Slot />
+    <GluestackUIProvider config={config.theme} colorMode={theme}>
+      <Box
+        h='$full'
+        w='$full'
+        sx={{
+          _dark: {
+            bgColor: '$gray900',
+          },
+        }}
+      >
+        <Slot />
+      </Box>
 
       <StatusBar />
     </GluestackUIProvider>

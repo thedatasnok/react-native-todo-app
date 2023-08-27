@@ -21,20 +21,27 @@ export interface RadioInputOption<T extends string> {
 
 export interface RadioInputProps<T extends string> {
   options: RadioInputOption<T>[];
+  value?: T;
+  onChange?: (value: T) => void;
 }
 
-const RadioInput = <T extends string>({ options }: RadioInputProps<T>) => {
-  const [value, setValue] = useState(options[0].value);
+const RadioInput = <T extends string>({
+  options,
+  value: defaultValue,
+  onChange,
+}: RadioInputProps<T>) => {
+  const [value, setValue] = useState(defaultValue ?? options[0].value);
 
-  const emitChange = (value: any) => {
-    setValue(value);
+  const emitChange = (newValue: any) => {
+    setValue(newValue);
+    onChange?.(newValue);
   };
 
   return (
     <RadioGroup onChange={emitChange} value={value}>
       {options.map((option, idx, arr) => (
         <Radio
-          key={option.label}
+          key={option.label + value}
           value={option.value}
           sx={{
             display: 'flex',
@@ -43,14 +50,24 @@ const RadioInput = <T extends string>({ options }: RadioInputProps<T>) => {
             px: '$2',
             marginTop: -1,
             borderWidth: '$1',
-            borderTopLeftRadius: idx === 0 ? 4 : 0,
-            borderTopRightRadius: idx === 0 ? 4 : 0,
-            borderBottomLeftRadius: idx === arr.length - 1 ? 4 : 0,
-            borderBottomRightRadius: idx === arr.length - 1 ? 4 : 0,
-            borderColor: value === option.value ? '$primary300' : '$gray200',
+            borderTopLeftRadius: idx === 0 ? '$md' : undefined,
+            borderTopRightRadius: idx === 0 ? '$md' : undefined,
+            borderBottomLeftRadius: idx === arr.length - 1 ? '$md' : undefined,
+            borderBottomRightRadius: idx === arr.length - 1 ? '$md' : undefined,
+            _dark: {
+              borderColor: value === option.value ? '$primary700' : '$gray700',
+              ':checked': {
+                backgroundColor: '$primary900',
+              },
+            },
+            _light: {
+              borderColor: value === option.value ? '$primary300' : '$gray200',
+              ':checked': {
+                backgroundColor: '$primary50',
+              },
+            },
             ':checked': {
               zIndex: 10,
-              backgroundColor: '$primary50',
             },
           }}
         >
