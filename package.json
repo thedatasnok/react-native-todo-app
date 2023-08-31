@@ -14,6 +14,7 @@
     "@gluestack-ui/themed": "^0.1.9",
     "@gluestack-ui/utils": "^0.1.8",
     "@react-navigation/native": "^6.0.2",
+    "dotenv": "^16.3.1",
     "expo": "~49.0.8",
     "expo-font": "~11.4.0",
     "expo-linking": "~5.0.2",
