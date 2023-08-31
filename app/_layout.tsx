@@ -2,6 +2,7 @@ import { GluestackUIProvider, config } from '@gluestack-ui/themed';
 import { Slot } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
+import '@/config/firebase';
 
 export type Todo = {
   name: string;
